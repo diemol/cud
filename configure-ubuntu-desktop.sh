@@ -41,7 +41,7 @@ chmod 0600 /home/$MY_USER/.vnc/passwd
 vncserver :1
 
 # Replace ~/.vnc/xstartup contents
-curl -fsSL https://gist.githubusercontent.com/diemol/23721cf211774fd196055c09b6a7f218/raw/42f34cccc196cc1e3c6b4eb41b9fd208fd544773/xstartup -o /home/$MY_USER/.vnc/xstartup
+curl -fsSL https://raw.githubusercontent.com/diemol/configure-ubuntu-desktop/main/xstartup -o /home/$MY_USER/.vnc/xstartup
 
 # Stop & start VNC 
 vncserver -kill :1
