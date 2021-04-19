@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# curl -fsSL https://raw.githubusercontent.com/diemol/configure-ubuntu-desktop/main/configure-ubuntu-desktop.sh -o configure-ubuntu-desktop.sh
-# chmod +x configure-ubuntu-desktop.sh && ./configure-ubuntu-desktop.sh
+# curl -fsSL https://raw.githubusercontent.com/diemol/cud/main/cud.sh -o cud.sh
+# chmod +x cud.sh && ./cud.sh
 
 # Install docker
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -42,7 +42,7 @@ chmod 0600 /home/$MY_USER/.vnc/passwd
 vncserver :1
 
 # Replace ~/.vnc/xstartup contents
-curl -fsSL https://raw.githubusercontent.com/diemol/configure-ubuntu-desktop/main/xstartup -o /home/$MY_USER/.vnc/xstartup
+curl -fsSL https://raw.githubusercontent.com/diemol/cud/main/xstartup -o /home/$MY_USER/.vnc/xstartup
 
 # Stop & start VNC 
 vncserver -kill :1
