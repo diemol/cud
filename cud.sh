@@ -51,6 +51,24 @@ vncserver :1 -geometry 1280x1024
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+########################################
+# noVNC exposes VNC through a web page #
+########################################
+# Download https://github.com/novnc/noVNC dated 2021-03-30 commit 84f102d6a9ffaf3972693d59bad5c6fddb6d7fb0
+# Download https://github.com/novnc/websockify dated 2021-03-22 commit c5d365dd1dbfee89881f1c1c02a2ac64838d645f
+NOVNC_SHA="84f102d6a9ffaf3972693d59bad5c6fddb6d7fb0"
+WEBSOCKIFY_SHA="c5d365dd1dbfee89881f1c1c02a2ac64838d645f"
+wget -nv -O noVNC.zip "https://github.com/novnc/noVNC/archive/${NOVNC_SHA}.zip"
+unzip -x noVNC.zip \
+mv noVNC-${NOVNC_SHA} ${HOME}/noVNC
+cp ${HOME}/noVNC/vnc.html ${HOME}/noVNC/index.html
+rm noVNC.zip
+wget -nv -O websockify.zip "https://github.com/novnc/websockify/archive/${WEBSOCKIFY_SHA}.zip"
+unzip -x websockify.zip
+rm websockify.zip
+mv websockify-${WEBSOCKIFY_SHA} ${HOME}/noVNC/utils/websockify
+
+${HOME}/noVNC/utils/launch.sh --listen 7901 --vnc localhost:5901 &
 
 echo "Installation completed"
 
