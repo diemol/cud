@@ -9,7 +9,6 @@ sudo sh get-docker.sh
 
 # Allowing ubuntu user to run docker
 sudo usermod -aG docker ubuntu
-newgrp docker
 
 # Install desktop and VNC
 sudo apt update
