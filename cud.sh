@@ -5,7 +5,7 @@
 
 # Install docker
 curl -fsSL https://get.docker.com -o get-docker.sh
-chmod +x get-docker.sh && ./get-docker.sh
+sudo sh get-docker.sh
 
 # Allowing ubuntu user to run docker
 sudo usermod -aG docker ubuntu
