@@ -14,7 +14,7 @@ sudo usermod -aG docker ubuntu
 sudo apt update
 sudo apt install ubuntu-desktop -y
 sudo apt install tightvncserver -y
-sudo apt install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal -y
+sudo apt install gnome-panel gnome-settings-daemon metacity nautilus -y
 
 # Install VSCode
 sudo apt update
