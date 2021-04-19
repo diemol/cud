@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# curl -fsSL <GIST_RAW_URL> -o configure-ubuntu-desktop.sh
+# curl -fsSL https://raw.githubusercontent.com/diemol/configure-ubuntu-desktop/main/configure-ubuntu-desktop.sh -o configure-ubuntu-desktop.sh
 # chmod +x configure-ubuntu-desktop.sh && ./configure-ubuntu-desktop.sh
 
 # Install docker
