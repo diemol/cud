@@ -1,3 +1,20 @@
+#!/bin/sh -e
+### BEGIN INIT INFO
+# Provides:          vncserver
+# Required-Start:    networking
+# Default-Start:     S
+# Default-Stop:      0 6
+### END INIT INFO
+
+PATH="$PATH:/usr/X11R6/bin/"
+
+# The Username:Group that will run VNC
+export USER="ubuntu"
+#${RUNAS}
+
+# The display that VNC will use
+DISPLAY="1"
+
 # Color depth (between 8 and 32)
 DEPTH="24"
 
