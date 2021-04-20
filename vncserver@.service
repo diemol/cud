@@ -1,0 +1,14 @@
+[Unit]
+Description=Systemd VNC server startup script for Ubuntu 20.04
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=ubuntu
+ExecStartPre=-/usr/bin/vncserver -kill :%i &> /dev/null
+ExecStart=/usr/bin/vncserver -depth 24 -geometry 800x600 :%i
+PIDFile=/home/ubuntu/.vnc/%H:%i.pid
+ExecStop=/usr/bin/vncserver -kill :%i
+
+[Install]
+WantedBy=multi-user.target
