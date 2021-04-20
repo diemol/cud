@@ -10,11 +10,12 @@ sudo sh get-docker.sh
 # Allowing ubuntu user to run docker
 sudo usermod -aG docker ubuntu
 
+# https://ubuntu.com/tutorials/ubuntu-desktop-aws#1-overview
 # Install desktop and VNC
 sudo apt update
 sudo apt install ubuntu-desktop -y
 sudo apt install tightvncserver -y
-# Fixes copy & paste to VNC
+# Fixes copy & paste to VNC https://askubuntu.com/questions/41273/how-to-copy-paste-text-from-remote-system
 sudo apt-get install autocutsel -y
 sudo apt install gnome-panel gnome-settings-daemon metacity nautilus -y
 
@@ -49,6 +50,7 @@ vncserver -kill :1
 vncserver :1 -geometry 1280x1024
 
 # Start VNC after reboot
+# https://linuxconfig.org/vnc-server-on-ubuntu-20-04-focal-fossa-linux
 sudo curl -fsSL https://raw.githubusercontent.com/diemol/cud/main/vncserver.service -o /etc/systemd/system/vncserver@.service
 sudo systemctl daemon-reload
 sudo systemctl enable vncserver@1
@@ -60,6 +62,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 ########################################
 # noVNC exposes VNC through a web page #
 ########################################
+# https://github.com/novnc/noVNC#running-as-a-service-daemon
 sudo snap install novnc
 sudo snap set novnc services.n7901.listen=7901 services.n7901.vnc=localhost:5901
 
