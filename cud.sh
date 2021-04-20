@@ -63,7 +63,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 NOVNC_SHA="84f102d6a9ffaf3972693d59bad5c6fddb6d7fb0"
 WEBSOCKIFY_SHA="c5d365dd1dbfee89881f1c1c02a2ac64838d645f"
 wget -nv -O noVNC.zip "https://github.com/novnc/noVNC/archive/${NOVNC_SHA}.zip"
-unzip -x noVNC.zip \
+unzip -x noVNC.zip
 mv noVNC-${NOVNC_SHA} ${HOME}/noVNC
 cp ${HOME}/noVNC/vnc.html ${HOME}/noVNC/index.html
 rm noVNC.zip
