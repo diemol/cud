@@ -68,3 +68,5 @@ sudo snap set novnc services.n7901.listen=7901 services.n7901.vnc=localhost:5901
 
 echo "Installation completed"
 
+sudo reboot
+
