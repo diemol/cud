@@ -33,15 +33,14 @@ python3.9 --version
 # Start VNC to generate configuration
 mkdir -p ${HOME}/.vnc
 MY_PWD="saucecon"
-MY_USER="ubuntu"
-echo $MY_PWD | vncpasswd -f > /home/$MY_USER/.vnc/passwd
-chmod 0600 /home/$MY_USER/.vnc/passwd
+echo $MY_PWD | vncpasswd -f > ${HOME}/.vnc/passwd
+chmod 0600 ${HOME}/.vnc/passwd
 
 # Start VNC Server to generate config
 vncserver :1
 
 # Replace ~/.vnc/xstartup contents
-curl -fsSL https://raw.githubusercontent.com/diemol/cud/main/xstartup -o /home/$MY_USER/.vnc/xstartup
+curl -fsSL https://raw.githubusercontent.com/diemol/cud/main/xstartup -o ${HOME}/.vnc/xstartup
 
 # Stop & start VNC 
 vncserver -kill :1
@@ -68,7 +67,7 @@ unzip -x websockify.zip
 rm websockify.zip
 mv websockify-${WEBSOCKIFY_SHA} ${HOME}/noVNC/utils/websockify
 
-${HOME}/noVNC/utils/launch.sh --listen 7901 --vnc localhost:5901 &
+# ${HOME}/noVNC/utils/launch.sh --listen 7901 --vnc localhost:5901 &
 
 echo "Installation completed"
 
