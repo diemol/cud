@@ -14,6 +14,8 @@ sudo usermod -aG docker ubuntu
 sudo apt update
 sudo apt install ubuntu-desktop -y
 sudo apt install tightvncserver -y
+# Fixes copy & paste to VNC
+sudo apt-get install autocutsel -y
 sudo apt install gnome-panel gnome-settings-daemon metacity nautilus -y
 
 # Install VSCode
