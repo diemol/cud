@@ -46,6 +46,11 @@ curl -fsSL https://raw.githubusercontent.com/diemol/cud/main/xstartup -o ${HOME}
 vncserver -kill :1
 vncserver :1 -geometry 1280x1024
 
+# Start VNC after reboot
+sudo curl -fsSL https://raw.githubusercontent.com/diemol/cud/main/vncserver -o /etc/init.d/vncserver
+sudo chmod +x /etc/init.d/vncserver
+sudo update-rc.d vncserver defaults
+
 # Install docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
