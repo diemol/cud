@@ -47,9 +47,9 @@ vncserver -kill :1
 vncserver :1 -geometry 1280x1024
 
 # Start VNC after reboot
-sudo curl -fsSL https://raw.githubusercontent.com/diemol/cud/main/vncserver -o /etc/init.d/vncserver
-sudo chmod +x /etc/init.d/vncserver
-sudo update-rc.d vncserver defaults
+sudo curl -fsSL https://raw.githubusercontent.com/diemol/cud/main/vncserver.service -o /etc/systemd/system/vncserver@.service
+sudo systemctl daemon-reload
+sudo systemctl enable vncserver@1
 
 # Install docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
